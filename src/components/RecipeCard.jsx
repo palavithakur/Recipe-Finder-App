@@ -68,7 +68,7 @@ const RecipeCard = ({ recipe, bg, badge }) => {
                 {recipe.cuisineType[0].charAt(0).toUpperCase() + recipe.cuisineType[0].slice(1)} Kitchen
             </p>
 
-            <div className='flex gap-2 mt-auto'>
+            <div className='flex flex-wrap gap-2 mt-auto'>
                 {healthLabels.map((label, idx) => (
                     <div key={idx} className={`flex gap-1 ${badge} items-center p-1 rounded-md`}>
                         <HeartPulse size={16} />

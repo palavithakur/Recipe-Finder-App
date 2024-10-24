@@ -7,12 +7,11 @@ function App() {
     return (
         <div className='flex'>
             <Sidebar />
-            <div className="flex-1 p-4">
+            <div className="flex-1 p-2 lg:p-4">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/favorites" element={<Favorites />} />
                 </Routes>
-                <p>Main content will go here...</p>
             </div>
         </div>
     );

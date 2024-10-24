@@ -38,14 +38,14 @@ const HomePage = () => {
     };
 
     return (
-        <div className="bg-[#efeded] p-10 flex-1 rounded-md">
-            <div className="max-w-screen-lg mx-auto">
+        <div className="bg-[#efeded] p-4 lg:p-10 flex-1 rounded-md">
+            <div className="max-w-screen-lg w-auto ">
                 <form onSubmit={handleSearch}>
-                    <label className='input shadow-md flex items-center gap-2'>
-                        <Search size={"24"} />
+                    <label className='input shadow-md flex items-center gap-2 h-8 sm:h-12'>
+                        <Search size={"20"} />
                         <input
                             type="text"
-                            className='text-sm md:text-md grow'
+                            className='text-sm md:text-md grow '
                             placeholder='What do you want to cook today?'
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
@@ -53,15 +53,15 @@ const HomePage = () => {
                     </label>
                 </form>
 
-                <h1 className='font-bold text-3xl md:text-5xl mt-4'>Recommended Recipe</h1>
+                <h1 className='font-bold text-2xl  md:text-5xl mt-4'>Recommended Recipe</h1>
                 <p className='text-slate-500 font-semibold ml-1 my-2 text-sm tracking-tight'>
                     Popular Choices
                 </p>
 
                 <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                     {!loading && recipes.map(({ recipe }, index) => (
-                        <RecipeCard key={index} recipe={recipe} 
-                        {...getRandomColor()}/>
+                        <RecipeCard key={index} recipe={recipe}
+                            {...getRandomColor()} />
                     ))}
 
                     {loading && [...Array(9)].map((_, index) => (
